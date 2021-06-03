@@ -169,7 +169,7 @@ body{
   }
   .c-embed{
     display: grid;
-    grid-template-columns: 210px 1fr;
+    grid-template-columns: 1fr 260px;
     grid-gap: 60px;
     max-width: 1600px;
     margin: 0 auto;
@@ -184,22 +184,31 @@ body{
         margin: 0;
         padding: 0;
         li{
+          display: flex;
+          flex: 1;
           button{
-            background: none;
-            border: 2px solid #7A8EB8;
-            border-radius: 6px;
-            color: #7A8EB8;
+            background: #7A8EB8;
+            border: none;
+            border-bottom: 1px solid #081C44;
+            color: #081C44;
             cursor: pointer;
+            flex: 1;
             font-size: 16px;
             font-weight: bold;
             display: block;
-            padding: 6px 10px;
+            padding: 10px 15px;
             margin: 0;
             transition: .3s;
             width: 100%;
             &:hover, &.active{
-              background: #7A8EB8;
-              color: #081C44;
+              background: #081C44;
+              color: white;
+              transform: scale(1.06);
+            }
+          }
+          &:last-child{
+            button{
+              border-bottom: none;
             }
           }
         }
@@ -224,13 +233,10 @@ body{
       grid-gap: 30px;
       .playlist{
         padding: 0 30px;
-        ul{
-          li{
-            button{
-              margin-bottom: 10px;
-            }
-          }
-        }
+        order: 1;
+      }
+      .c-iframe{
+        order: 2;
       }
     }
   }

@@ -194,7 +194,7 @@ body {
 
 .c-videos .c-embed {
   display: grid;
-  grid-template-columns: 210px 1fr;
+  grid-template-columns: 1fr 260px;
   grid-gap: 60px;
   max-width: 1600px;
   margin: 0 auto;
@@ -214,24 +214,35 @@ body {
   padding: 0;
 }
 
+.c-videos .c-embed .playlist ul li {
+  display: flex;
+  flex: 1;
+}
+
 .c-videos .c-embed .playlist ul li button {
-  background: none;
-  border: 2px solid #7A8EB8;
-  border-radius: 6px;
-  color: #7A8EB8;
+  background: #7A8EB8;
+  border: none;
+  border-bottom: 1px solid #081C44;
+  color: #081C44;
   cursor: pointer;
+  flex: 1;
   font-size: 16px;
   font-weight: bold;
   display: block;
-  padding: 6px 10px;
+  padding: 10px 15px;
   margin: 0;
   transition: .3s;
   width: 100%;
 }
 
 .c-videos .c-embed .playlist ul li button:hover, .c-videos .c-embed .playlist ul li button.active {
-  background: #7A8EB8;
-  color: #081C44;
+  background: #081C44;
+  color: white;
+  transform: scale(1.06);
+}
+
+.c-videos .c-embed .playlist ul li:last-child button {
+  border-bottom: none;
 }
 
 .c-videos .c-embed .c-iframe {
@@ -260,9 +271,10 @@ body {
   }
   .c-videos .c-embed .playlist {
     padding: 0 30px;
+    order: 1;
   }
-  .c-videos .c-embed .playlist ul li button {
-    margin-bottom: 10px;
+  .c-videos .c-embed .c-iframe {
+    order: 2;
   }
 }
 
