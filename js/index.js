@@ -59,12 +59,43 @@ const members = [
   }
 ];
 const membersContainer = document.getElementById('members');
+const buttonsContainer = document.getElementById('playlist');
+const iframeContainer = document.getElementById('iframeContainer');
+let buttons = document.createElement('ul');
 let membersItems = '';
-members.forEach(m => {
+members.forEach((m, i) => {
   membersItems += `<a href="${m.ytLink}" target="_blank" class="item" ${m.tooltip ? ('data-tooltip="'+m.tooltip+'"') : ''}>
     <picture>
       <img src="./assets/images/${m.img}" alt="">
     </picture>
-  </a>`
+  </a>`;
+  let containerItem = document.createElement('li');
+  let buttonItem = document.createElement('button');
+	buttonItem.textContent = m.name;
+  buttonItem.setAttribute('data-index', m.id);
+  buttonItem.id = `button${m.id}`;
+  buttonItem.addEventListener('click', loadVideo);
+  containerItem.appendChild(buttonItem);
+	buttons.appendChild(containerItem);
 });
+buttonsContainer.appendChild(buttons);
+const button1 = document.getElementById('button1');
+button1.classList.toggle('active');
 membersContainer.innerHTML = membersItems;
+function loadVideo(e){
+  iframeContainer.innerHTML = '';
+  const videoData = members.find(m => m.id == e.target.getAttribute("data-index"));
+  members.forEach(m => {
+    const buttonChange = document.getElementById(`button${m.id}`);
+    if(m.id == videoData.id){
+      buttonChange.classList.add('active');
+    }else{
+      buttonChange.classList.remove('active');
+    }
+  });
+  iframeContainer.scrollIntoView();
+  let video = `<iframe src="https://www.youtube.com/embed/${videoData.ytId}?start=${videoData.ytTime}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  setTimeout(function(){
+    iframeContainer.innerHTML = video;
+  },2)
+}

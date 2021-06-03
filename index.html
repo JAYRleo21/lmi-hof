@@ -14,14 +14,14 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://metatags.io/">
+  <meta property="og:url" content="https://jayrleo21.github.io/lmi-hof/">
   <meta property="og:title" content="LMI - Hall of fame">
   <meta property="og:description" content="Hall of fame - La Media Inglesa">
   <meta property="og:image" content="https://jayrleo21.github.io/lmi-hof/assets/images/lEs7M9t1_400x400.jpg">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://metatags.io/">
+  <meta property="twitter:url" content="https://jayrleo21.github.io/lmi-hof/">
   <meta property="twitter:title" content="LMI - Hall of fame">
   <meta property="twitter:description" content="Hall of fame - La Media Inglesa">
   <meta property="twitter:image" content="https://jayrleo21.github.io/lmi-hof/assets/images/lEs7M9t1_400x400.jpg">
@@ -29,12 +29,23 @@
 </head>
 <body>
   <main class="main">
-    <div class="bg-image">
-      <img src="./assets/images/lamediainglesa_192398962_841915249759463_2411183050719540917_n.jpg" alt="">
-      <div class="c-filter"></div>
-    </div>
-    <h1><img src="./assets/images/hof-title.png" alt=""></h1>
-    <div class="c-members" id="members"></div>
+    <section class="c-hall">
+      <div class="bg-image">
+        <img src="./assets/images/lamediainglesa_192398962_841915249759463_2411183050719540917_n.jpg" alt="">
+        <div class="c-filter"></div>
+      </div>
+      <h1><img src="./assets/images/hof-title.png" alt=""></h1>
+      <div class="c-members" id="members"></div>
+    </section>
+    <section class="c-videos">
+      <h2>Ve los videos aquí</h2>
+      <div class="c-embed">
+        <aside class="playlist" id="playlist"></aside>
+        <div class="c-iframe" id="iframeContainer">
+          <iframe width="887" height="499" src="https://www.youtube.com/embed/qgBKdDXo2Cs?start=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
   </main>
   <script src="./js/index.js"></script>
 </body>
